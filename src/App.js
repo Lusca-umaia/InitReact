@@ -1,28 +1,42 @@
 import './App.css';
 import { useState } from 'react'
 import closeButton from './closeButton.png'
+import RendHistory from './component/rendHistory';
+
 function App() {
   function sum() {
+    let armazenamento = []
     setResult(parseInt(numberOne) + parseInt(numberTwo))
     setOperation('+')
     setOpen(true)
+    armazenamento.push(parseInt(numberOne) + parseInt(numberTwo))
+    setHistory(history.concat(armazenamento))
   }
   function sub() {
+    let armazenamento = []
     setResult(parseInt(numberOne) - parseInt(numberTwo))
     setOperation('-')
     setOpen(true)
+    armazenamento.push(parseInt(numberOne) - parseInt(numberTwo))
+    setHistory(history.concat(armazenamento))
   }
 
   function division() {
+    let armazenamento = []
     setResult(parseInt(numberOne) / parseInt(numberTwo))
     setOperation('/')
     setOpen(true)
+    armazenamento.push(parseInt(numberOne) / parseInt(numberTwo))
+    setHistory(history.concat(armazenamento))
   }
 
   function mult() {
+    let armazenamento = []
     setResult(parseInt(numberOne) * parseInt(numberTwo))
     setOperation('X')
     setOpen(true)
+    armazenamento.push(parseInt(numberOne) * parseInt(numberTwo))
+    setHistory(history.concat(armazenamento))
   }
 
   const [numberOne, setnumberOne] = useState(0)
@@ -30,7 +44,7 @@ function App() {
   const [open, setOpen] = useState(false)
   const [operation, setOperation] = useState()
   const [result, setResult] = useState()
-
+  const [history, setHistory] = useState([])
   return (
     <section className="container">
       <h1>Calculator</h1>
@@ -56,8 +70,7 @@ function App() {
           <p>{`${numberOne} ${operation} ${numberTwo} = ${result}`}</p>
         </div>
         : null}
-
-
+      <RendHistory history={history} />
     </section>
   );
 }
