@@ -1,4 +1,4 @@
-import List from './listComponent'
+import List from '../../Atoms/List/listComponent'
 
 export default function rendHistory({ history }) {
     return (

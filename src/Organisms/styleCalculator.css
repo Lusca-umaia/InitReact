@@ -1,0 +1,8 @@
+.sectionCalculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 22px;
+    flex-direction: column;
+}
