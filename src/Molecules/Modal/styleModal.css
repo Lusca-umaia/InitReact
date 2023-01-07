@@ -1,0 +1,34 @@
+.Modal {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    gap: 20px;
+    padding: 30px;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    color: #042940;
+    border-radius: 20px;
+    border: 10px solid #DBF227;
+    background-color: #eee;
+}
+
+.Modal button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 50px;
+    width: 100px;
+    align-self: flex-end;
+    transition: .6s all;
+}
+
+.Modal button:hover {
+    opacity: .6;
+}
+
+.Modal p {
+    font-size: 3.5em;
+    align-self: center;
+}
